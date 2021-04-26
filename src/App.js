@@ -23,7 +23,7 @@ class App extends Component {
     return (
       <>
       <h1>Phonebook</h1>
-      <ContactForm onSubmit={this.addContact}/>
+      <Form onSubmit={this.addContact}/>
       <h2>Contacts</h2>
       <Filter value={filter} onChange={this.changeFilter}/>
         <ContactList contacts={visibleContacts} onDeleteContact={this.deleteContact}/>
