@@ -1,13 +1,16 @@
 import styles from './Filter.module.css'
 
-const Filter = ({ contacts,onDeleteContact }) => (
-<label className={styles.label}> 
-Find contacts by Name 
-<input type="text" 
-className={styles.input} 
-value = {value} 
-onChange={onChange}/>
-</label>)
+const Filter = ({ value, onChange }) => (
+  <label className={styles.label}>
+    Find contacts by Name
+    <input
+      type="text"
+      className={styles.input}
+      value={value}
+      onChange={onChange}
+    />
+  </label>
+);
 
 
 

@@ -1,34 +1,33 @@
+import React, { Component } from 'react';
 import shortid from 'shortid';
 import styles from './Form.module.css';
 import PropTypes from 'prop-types';
 
 class Form extends Component {
-  state = { name: '', 
-  number: '' 
-};
-nameInputId = shortid.generate();
-numberInputId = shortid.generate();
+  state = { name: '', number: '' };
+  nameInputId = shortid.generate();
+  numberInputId = shortid.generate();
 
-handleChange = event => {
+  handleChange = event => {
     const { name, value } = event.currentTarget;
     this.setState({ [name]: value });
-  }
+  };
 
   handleSubmit = event => {
     const { name, number } = this.state;
     event.preventDefault();
     this.props.onSubmit(name, number);
     this.reset();
-  }  
-  
+  };
+
   reset() {
     this.setState({
       name: '',
       number: '',
     });
-  } 
+  }
 
-render() {
+  render() {
     return (
       <form className={styles.form} onSubmit={this.handleSubmit}>
         <label className={styles.label} htmlFor={this.nameInputId}>
@@ -60,12 +59,10 @@ render() {
       </form>
     );
   }
-
 }
 Form.propTypes = {
   name: PropTypes.string,
   number: PropTypes.number,
-}
-
+};
 
 export default Form;
