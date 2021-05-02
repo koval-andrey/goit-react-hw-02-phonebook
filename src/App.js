@@ -1,7 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import shortid from 'shortid';
+import PropTypes from 'prop-types';
+
+class App extends Component {
+state = {
+  contacts: [
+    { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
+    { id: 'id-2', name: 'Hermion Kline', number: '443-89-12' },
+    { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
+    { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
+  ],
+  filter: '',
+}
   return (
     <div className="App">
       <header className="App-header">
